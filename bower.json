@@ -1,6 +1,6 @@
 {
-  "name": "test",
-  "version": "0.0.0",
+  "name": "thoulike",
+  "version": "1.0.0",
   "dependencies": {
     "angular": "~1.2.0",
     "json3": "~3.3.1",
