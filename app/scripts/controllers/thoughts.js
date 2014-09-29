@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name testApp.controller:AboutCtrl
+ * @name testApp.controller:MainCtrl
  * @description
- * # AboutCtrl
+ * # MainCtrl
  * Controller of the testApp
  */
 angular.module('thoulikeApp')
-  .controller('AboutController', function ($scope) {
+  .controller('ThoughtsController', function ($scope) {
   });
