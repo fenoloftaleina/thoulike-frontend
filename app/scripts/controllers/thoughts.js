@@ -42,18 +42,20 @@ function showing(from, to, element, done, height) {
   });
   jQuery(element).animate({
     opacity: to && 1,
-    height: (height ? to : undefined)
+    height: (height ? to: undefined)
   }, 1000, done);
 }
+
+var HEIGHT_TOO = true;
 
 angular.module('thoulikeApp')
 .animation('.welcome', function() {
   return {
     enter: function(element, done) {
-      showing(0, element.css('height', 'auto').height(), element, done);
+      showing(0, element.css('height', 'auto').height(), element, done, HEIGHT_TOO);
     },
     leave: function(element, done) {
-      showing(element.height(), 0, element, done);
+      showing(element.height(), 0, element, done, HEIGHT_TOO);
     }
   };
 });
