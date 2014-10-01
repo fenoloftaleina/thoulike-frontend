@@ -8,5 +8,5 @@
  * Controller of the testApp
  */
 angular.module('thoulikeApp')
-  .controller('AboutController', function ($scope) {
-  });
+.controller('AboutController', function ($scope) {
+});
