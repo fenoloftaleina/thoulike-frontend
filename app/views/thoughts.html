@@ -1,5 +1,5 @@
 <div ng-controller="ThoughtsController">
-  <div class="welcome" ng-if="noSearches">
+  <div class="welcome" ng-if="lastSearch == ''">
     <h2>What you've been thinking about lately?</h2>
   </div>
 
@@ -9,7 +9,7 @@
     </form>
   </div>
 
-  <div class="people" ng-if="!noSearches">
+  <div class="people" ng-if="lastSearch != ''">
     <li class="person" ng-repeat="person in people">
     <h3>{{person.name}}</h3>
     <p>{{person.alikes}} shared thoughts.</p>

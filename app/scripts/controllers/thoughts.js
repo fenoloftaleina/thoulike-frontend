@@ -11,18 +11,23 @@
 angular.module('thoulikeApp')
 .controller('ThoughtsController', ['$scope', '$http', function($scope, $http) {
   $scope.people = [];
-  $scope.noSearches = true;
+  $scope.lastSearch = ""
 
   $scope.findnshare = function() {
-    $scope.noSearches = false;
-    $scope.people = [];
-    var request = $http({
-      method: 'get',
-      url: 'http://localhost:3000/thoughts/findnshare/' + $scope.thought,
-      headers: { 'X-User-Token': '-ixFszgyU8zC8vVa1Xs2', 'X-User-Email': 'dominik2cucu@gmail.com' },
-    });
+    if($scope.lastSearch != $scope.thought) {
+      $scope.people = [];
 
-    return(request.then($scope.handleSuccess, $scope.handleError));
+      $scope.lastSearch = $scope.thought;
+
+      var request = $http({
+        method: 'get',
+        url: 'http://localhost:3000/thoughts/findnshare/' + $scope.thought,
+        headers: { 'X-User-Token': '-ixFszgyU8zC8vVa1Xs2', 'X-User-Email': 'dominik2cucu@gmail.com' },
+      });
+
+      return(request.then($scope.handleSuccess, $scope.handleError));
+    }
+    return null;
   };
 
   $scope.handleSuccess = function(response) {
