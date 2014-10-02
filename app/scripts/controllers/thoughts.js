@@ -67,7 +67,7 @@ angular.module('thoulikeApp')
       showing(0, 1, element, done);
     },
     leave: function(element, done) {
-      showing(0, 0, element, done);
+      showing(1, 0, element, done);
     }
   };
 });
