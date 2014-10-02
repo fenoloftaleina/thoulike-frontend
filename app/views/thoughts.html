@@ -9,7 +9,7 @@
     </form>
   </div>
 
-  <div class="people">
+  <div class="people" ng-if="!noSearches">
     <li class="person" ng-repeat="person in people">
     <h3>{{person.name}}</h3>
     <p>{{person.alikes}} shared thoughts.</p>

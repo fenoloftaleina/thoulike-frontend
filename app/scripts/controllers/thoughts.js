@@ -64,10 +64,22 @@ angular.module('thoulikeApp')
 .animation('.person', function() {
   return {
     enter: function(element, done) {
-      showing(0, element.css('height', 'auto').height(), element, done);
+      showing(0, 1, element, done);
     },
     leave: function(element, done) {
-      showing(element.height(), 0, element, done);
+      showing(0, 0, element, done);
+    }
+  };
+});
+
+angular.module('thoulikeApp')
+.animation('.people', function() {
+  return {
+    enter: function(element, done) {
+      showing(0, element.height(), element, done, HEIGHT_TOO);
+    },
+    leave: function(element, done) {
+      showing(element.height(), 0, element, done, HEIGHT_TOO);
     }
   };
 });
