@@ -16,15 +16,13 @@ angular.module('thoulikeApp')
   $scope.findnshare = function() {
     $scope.noSearches = false;
     $scope.people = [];
-    setTimeout(function() {
-      var request = $http({
-        method: 'get',
-        url: 'http://localhost:3000/thoughts/findnshare/' + $scope.thought,
-        headers: { 'X-User-Token': '-ixFszgyU8zC8vVa1Xs2', 'X-User-Email': 'dominik2cucu@gmail.com' },
-      });
+    var request = $http({
+      method: 'get',
+      url: 'http://localhost:3000/thoughts/findnshare/' + $scope.thought,
+      headers: { 'X-User-Token': '-ixFszgyU8zC8vVa1Xs2', 'X-User-Email': 'dominik2cucu@gmail.com' },
+    });
 
-      return(request.then($scope.handleSuccess, $scope.handleError));
-    }, 1000);
+    return(request.then($scope.handleSuccess, $scope.handleError));
   };
 
   $scope.handleSuccess = function(response) {
