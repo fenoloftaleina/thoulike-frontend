@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('thoulikeApp')
-.controller('MainController', function ($scope) {
+.controller('MainController', ['$scope', '$timeout', function ($scope, $timeout) {
   $scope.animate = function() {
-    setTimeout(function() {
+    $timeout(function() {
       $scope.animate = true;
     }, 1000);
     return false;
   }();
-});
+}]);
