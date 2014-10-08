@@ -38,27 +38,33 @@ angular.module('thoulikeApp')
   };
 }]);
 
-function showing(from, to, element, done, height) {
+function showing(from, to, element, done, animateHeight, noAutoHeight) {
   jQuery(element).css({
     opacity: from && 1,
-    height: (height ? from : undefined)
+    height: (animateHeight ? from : undefined)
   });
   jQuery(element).animate({
     opacity: to && 1,
-    height: (height ? to: undefined)
-  }, 1000, done);
+    height: (animateHeight ? to : undefined)
+  }, 1000, function() {
+    if(animateHeight && !noAutoHeight && to != 0) {
+      jQuery(element).css('height', 'auto');
+    }
+    done();
+  });
 }
 
-var HEIGHT_TOO = true;
+var ANIMATE_HEIGHT = true;
+var NO_AUTO_HEIGHT = true;
 
 angular.module('thoulikeApp')
 .animation('.welcome', function() {
   return {
     enter: function(element, done) {
-      showing(0, element.css('height', 'auto').height(), element, done, HEIGHT_TOO);
+      showing(0, element.css('height', 'auto').height(), element, done, ANIMATE_HEIGHT);
     },
     leave: function(element, done) {
-      showing(element.height(), 0, element, done, HEIGHT_TOO);
+      showing(element.height(), 0, element, done, ANIMATE_HEIGHT);
     }
   };
 });
@@ -79,11 +85,22 @@ angular.module('thoulikeApp')
 .animation('.people', function() {
   return {
     enter: function(element, done) {
-      showing(0, element.height(), element, done, HEIGHT_TOO);
+      showing(0, element.height(), element, done, ANIMATE_HEIGHT, NO_AUTO_HEIGHT);
     },
     leave: function(element, done) {
-      showing(element.height(), 0, element, done, HEIGHT_TOO);
+      showing(element.height(), 0, element, done, ANIMATE_HEIGHT, NO_AUTO_HEIGHT);
     }
   };
 });
 
+angular.module('thoulikeApp')
+.animation('.viewAnimation', function() {
+  return {
+    enter: function(element, done) {
+      showing(0, element.css('height', 'auto').height(), element, done, ANIMATE_HEIGHT);
+    },
+    leave: function(element, done) {
+      showing(element.height(), 0, element, done, ANIMATE_HEIGHT);
+    }
+  };
+});
