@@ -1,17 +1,9 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name testApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the testApp
- */
-
 angular.module('thoulikeApp')
 .controller('ThoughtsController', ['$scope', '$http', function($scope, $http) {
   $scope.people = [];
-  $scope.lastSearch = ""
+  $scope.lastSearch = "";
 
   $scope.findnshare = function() {
     if($scope.lastSearch != $scope.thought) {
