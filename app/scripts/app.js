@@ -19,7 +19,7 @@ angular.module('thoulikeApp', ['ngAnimate', 'ngRoute'])
     templateUrl: 'views/profile.html',
     controller: 'SettingsController'
   })
-  .when('/log_in', {
+  .when('/sign_in', {
     templateUrl: 'views/sign_in.html',
     controller: 'SignInController'
   })
