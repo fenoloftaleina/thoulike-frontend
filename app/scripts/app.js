@@ -15,15 +15,11 @@ angular.module('thoulikeApp', ['ngAnimate', 'ngRoute'])
     templateUrl: 'views/thoughts.html',
     controller: 'ThoughtsController'
   })
-  .when('/about', {
-    templateUrl: 'views/about.html',
-    controller: 'AboutController'
-  })
-  .when('/settings', {
-    templateUrl: 'views/settings.html',
+  .when('/profile', {
+    templateUrl: 'views/profile.html',
     controller: 'SettingsController'
   })
-  .when('/sign_in', {
+  .when('/log_in', {
     templateUrl: 'views/sign_in.html',
     controller: 'SignInController'
   })
@@ -34,6 +30,14 @@ angular.module('thoulikeApp', ['ngAnimate', 'ngRoute'])
   .when('/reset', {
     templateUrl: 'views/reset.html',
     controller: 'ResetController'
+  })
+  .when('/cancel', {
+    templateUrl: 'views/cancel.html',
+    controller: 'CancelController'
+  })
+  .when('/connect', {
+    templateUrl: 'views/connect.html',
+    controller: 'ConnectController'
   })
   .otherwise({
     redirectTo: '/'
