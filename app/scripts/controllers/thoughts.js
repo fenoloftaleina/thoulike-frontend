@@ -3,10 +3,10 @@
 angular.module('thoulikeApp')
 .controller('ThoughtsController', ['$scope', '$http', function($scope, $http) {
   $scope.people = [];
-  $scope.lastSearch = "";
+  $scope.lastSearch = '';
 
   $scope.findnshare = function() {
-    if($scope.lastSearch != $scope.thought) {
+    if($scope.lastSearch !== $scope.thought) {
       $scope.people = [];
 
       $scope.lastSearch = $scope.thought;
@@ -39,7 +39,7 @@ function showing(from, to, element, done, animateHeight, noAutoHeight) {
     opacity: to && 1,
     height: (animateHeight ? to : undefined)
   }, 1000, function() {
-    if(animateHeight && !noAutoHeight && to != 0) {
+    if(animateHeight && !noAutoHeight && to !== 0) {
       jQuery(element).css('height', 'auto');
     }
     done();
