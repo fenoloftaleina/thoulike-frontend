@@ -1,0 +1,21 @@
+<div ng-controller="SignInController">
+  <h2>Sign in</h2>
+  <form class="form-spacing" ng-submit="sign_in()">
+    <div class="tr">
+      <div class="td row-spacing form-left">Email</div>
+      <div class="td row-spacing"><input type="text" class="form-input" maxlength="40" ng-model="email"></input></div>
+    </div>
+    <div class="tr">
+      <div class="td row-spacing form-left">Password</div>
+      <div class="td row-spacing"><input type="text" class="form-input" maxlength="40" ng-model="password"></input></div>
+    </div>
+    <div class="float-right">SIGN IN</div>
+  </form>
+  </p>
+
+  <div class="menu">
+    <span><a href="#/">BACK</a></span>
+    <span><a href="#/sign_up?email={{email}}">SIGN UP</a></span>
+    <span><a href="#/reset?email={{email}}">RESET PASSWORD</a></span>
+  </div>
+</div>
