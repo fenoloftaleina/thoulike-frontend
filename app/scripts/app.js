@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular.module('thoulikeApp', ['ngAnimate', 'ngRoute'])
+angular.module('thoulikeApp', ['ngAnimate', 'ngRoute', 'LocalStorageModule'])
 .config(function ($routeProvider) {
   $routeProvider
   .when('/', {
