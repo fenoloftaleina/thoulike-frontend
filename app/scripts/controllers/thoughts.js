@@ -3,30 +3,16 @@
 angular.module('thoulikeApp')
 .controller('ThoughtsController', ['$scope', '$http', function($scope, $http) {
   $scope.people = [];
-  $scope.lastSearch = '';
 
   $scope.findnshare = function() {
-    if($scope.lastSearch !== $scope.thought) {
-      $scope.people = [];
-
-      $scope.lastSearch = $scope.thought;
-
-      var request = $http({
-        method: 'get',
-        url: 'http://localhost:3000/thoughts/findnshare/' + $scope.thought,
-        headers: { 'X-User-Token': '-ixFszgyU8zC8vVa1Xs2', 'X-User-Email': 'dominik2cucu@gmail.com' },
-      });
-
-      return(request.then($scope.handleSuccess, $scope.handleError));
-    }
-    return null;
-  };
-
-  $scope.handleSuccess = function(response) {
-    $scope.people = response.data;
-  };
-
-  $scope.handleError = function(response) {
+    // Just a stub for now, because of not running the backend on heroku as well.
+    $scope.people = [
+      { name: 'Ann', alikes: 5 },
+      { name: 'Bob', alikes: 3 },
+      { name: 'Cecilia', alikes: 2 },
+      { name: 'Dorothy', alikes: 1 },
+      { name: 'Edward', alikes: 1 }
+    ];
   };
 }]);
 
